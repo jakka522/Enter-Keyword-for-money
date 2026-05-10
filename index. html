@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Check</title>
+
+    <style>
+
+        body{
+            background: blue;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+            margin: 0;
+
+            font-family: Arial;
+        }.top-text { position: absolute;
+        top: 20px;
+        font-size: 30px;
+        font-weight: bold;
+        }
+
+        .box{
+            background: white;
+            color: black;
+
+            width: 300px;
+            padding: 30px;
+
+            border-radius: 15px;
+
+            text-align: center;
+        }
+        .box-expand {width: 300px
+        height: 300px;
+        }
+
+        h1{
+            background: green;
+            color: white;
+
+            padding: 10px;
+
+            border-radius: 10px;
+        }
+
+        input{
+            width: 90%;
+            height: 20px;
+
+            padding: 5px;
+
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            border-radius: 5px;
+            border: 1px solid gray;
+
+            font-size: 11px;
+        }
+
+        button{
+            background: black;
+            color: white;
+
+            border: none;
+
+            padding: 12px 25px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+        }
+
+        button:hover{
+            transform: scale(1.05);
+        }
+        .data-box{
+            display: none;
+
+            margin-top: 20px;
+        }
+
+        /* ตอนแสดงข้อมูล */
+        .show{
+            display: block;
+        }
+        .show {display: block;
+        }
+
+    </style>
+
+</head>
+
+<body> 
+<div class="box" id="box">
+
+        <h1>Enter</h1>
+
+        <!-- ช่องตรวจคำ -->
+        <input type="text" id="password" placeholder="Enter Keyword">
+
+        <br>
+
+        <button onclick="checkPassword()">
+            Check
+        </button>
+
+        <!-- ช่องกรอกข้อมูล -->
+        <div class="data-box" id="dataBox">
+
+            <h2>Keyword</h2>
+
+            <input type="text" placeholder="link">
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function checkPassword(){
+
+            let password =
+            document.getElementById("password").value
+
+            // คำที่ถูก
+            if(password == "050153"){
+
+                // ขยายกล่อง
+                document
+                .getElementById("box")
+                .classList.add("expand")
+
+                // แสดงช่องข้อมูล
+                document
+                .getElementById("dataBox")
+                .classList.add("show")
+
+            }else{
+
+                alert("Wrong Password")
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
